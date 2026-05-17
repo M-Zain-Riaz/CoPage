@@ -46,7 +46,7 @@
     "formidable": "^3.5.4",
     "http-errors": "^2.0.1",
     "jose": "^6.2.3",
-    "js-cookie": "^3.0.5",
+    "js-cookie": "^3.0.7",
     "jsdom": "^29.1.0",
     "jsonminify": "0.4.2",
     "jsonwebtoken": "^9.0.3",
