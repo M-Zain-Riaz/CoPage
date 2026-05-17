@@ -1,0 +1,80 @@
+{
+  "name": "copage",
+  "description": "A free and open source realtime collaborative editor",
+  "homepage": "https://etherpad.org",
+  "type": "module",
+  "keywords": [
+    "etherpad",
+    "realtime",
+    "collaborative",
+    "editor"
+  ],
+  "bin": {
+    "etherpad-healthcheck": "bin/etherpad-healthcheck"
+  },
+  "scripts": {
+    "lint": "pnpm --filter ep_etherpad-lite run lint",
+    "test": "pnpm --filter ep_etherpad-lite run test",
+    "test-utils": "pnpm --filter ep_etherpad-lite run test-utils",
+    "test-container": "pnpm --filter ep_etherpad-lite run test-container",
+    "dev": "pnpm --filter ep_etherpad-lite run dev",
+    "prod": "pnpm --filter ep_etherpad-lite run prod",
+    "ts-check": "pnpm --filter ep_etherpad-lite run ts-check",
+    "ts-check:watch": "pnpm --filter ep_etherpad-lite run ts-check:watch",
+    "test-ui": "pnpm --filter ep_etherpad-lite run test-ui",
+    "test-ui:ui": "pnpm --filter ep_etherpad-lite run test-ui:ui",
+    "test-admin": "pnpm --filter ep_etherpad-lite run test-admin",
+    "test-admin:ui": "pnpm --filter ep_etherpad-lite run test-admin:ui",
+    "plugins": "pnpm --filter bin run plugins",
+    "install-plugins": "pnpm --filter bin run plugins i",
+    "remove-plugins": "pnpm --filter bin run remove-plugins",
+    "list-plugins": "pnpm --filter bin run list-plugins",
+    "build:etherpad": "pnpm --filter admin run build-copy && pnpm --filter ui run build-copy",
+    "build:ui": "pnpm --filter ui run build-copy && pnpm --filter admin run build-copy",
+    "makeDocs": "pnpm --filter bin run makeDocs"
+  },
+  "dependencies": {
+    "ep_etherpad-lite": "link:src"
+  },
+  "devDependencies": {
+    "admin": "link:admin",
+    "docs": "link:doc",
+    "ui": "link:ui"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ether/etherpad.git"
+  },
+  "engineStrict": true,
+  "version": "2.7.2",
+  "license": "Apache-2.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ],
+    "ignoredBuiltDependencies": [
+      "@scarf/scarf"
+    ],
+    "overrides": {
+      "basic-ftp": ">=5.3.0",
+      "brace-expansion@>=2.0.0 <2.0.3": ">=2.0.3",
+      "diff@>=6.0.0 <8.0.3": ">=8.0.3",
+      "flatted": ">=3.4.2",
+      "follow-redirects": ">=1.16.0",
+      "glob@>=10.2.0 <10.5.0": ">=10.5.0",
+      "js-yaml@>=4.0.0 <4.1.1": ">=4.1.1",
+      "lodash": ">=4.18.0",
+      "minimatch@>=9.0.0 <9.0.7": ">=9.0.7",
+      "path-to-regexp@>=8.0.0 <8.4.0": ">=8.4.0",
+      "picomatch@>=4.0.0 <4.0.4": ">=4.0.4",
+      "qs@>=6.7.0 <6.14.2": ">=6.14.2",
+      "serialize-javascript": ">=7.0.5",
+      "socket.io-parser@>=4.0.0 <4.2.6": ">=4.2.6",
+      "tar@<7.5.11": ">=7.5.11",
+      "vite@>=7.0.0 <7.3.2": ">=7.3.2"
+    }
+  }
+}
